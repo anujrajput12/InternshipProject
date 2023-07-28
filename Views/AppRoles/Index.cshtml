@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+<div style="color:brown">
+    <p style="margin-top:20px">
+<h1 style="text-align:center ">  Application Roles </h1>
+    </p>
+</div>
+
+<div style="color:brown">
+    <h2 style="text-align:center">  View Roles </h2>
+</div>
+<div>
+    <a class="btn btn-danger" asp-action="Create" asp-controller="AppRoles" >
+        Create Role
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+    <th>
+                @Html.DisplayNameFor(model => model.Id)
+
+    </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Name)
+
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+            
+        }
+
+    </tbody>
+   
+
+
+
+
+
+
+</table>

@@ -1,0 +1,105 @@
+﻿
+@*@{
+    ViewData["Title"] = "DataTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@*<h1>Hospital DataTable</h1>
+@model IEnumerable<Hospital>
+*@
+@*@{
+    ViewData["Title"] = "Index";
+}*@
+<div style="text-align:center">
+    <p style="margin-top:30px  "><h1 class="text-align:center" style="  color:brown"> Hospital Data Table </h1></p>
+</div>
+
+<div class="container p-4">
+    <div class="row p-3">
+        
+        <div class="col-4">
+          
+        </div>
+@*        <div class="col-4">
+            
+
+
+
+        </div>
+        <div class="col-4 ">
+           
+        </div>*@
+    </div>
+</div>
+<table class=" table table-bordered table-striped " width="100px" @*style="margin-top:50px"*@>
+    <thead>
+        <tr>
+            <th>
+                Hospital_Id
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone_No
+            </th>
+            <th>
+                Registration_Charges
+            </th>
+            <th>
+                Residential_Address
+            </th>
+            <th>
+                <a class="btn btn-danger" asp-action="Create" asp-controller="HospitalData" style="width:100px ">
+                    Add Data
+                </a>
+            </th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.HospitalId
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNo
+                </td>
+                <td>
+                    @item.RegistrationCharges
+                </td>
+                <td>
+                    @item.ResidentialAddress
+                </td>
+                <td role="group">
+                    <div class="col-4">
+                    <a class="btn btn-danger" asp-action="Edit" asp-controller="HospitalData" asp-route-id="@item.HospitalId" style="width:70px ">
+                        Edit 
+                    </a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="HospitalData"  asp-route-id="@item.HospitalId" style="width:70px mt-8 ">
+                            Delete
+                        </a>
+                    </div>
+
+                </td>
+
+
+
+
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+
+

@@ -1,0 +1,75 @@
+﻿@*
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+@model Hospital
+@*<h1 style="color:brown">Add New Data</h1>
+*@
+<form method="post" class="border-dark p-4 border-5">
+
+    <div class="border p-4 m-6 ">
+        <div class="row pb-3">
+            <h2 style="color:brown">Add New Data</h2>
+            <hr/>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Email"  > Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text text-bg-danger">@*Enter valid Email*@ </span>
+
+        </div>
+        <div class="row mb-3">
+            <label asp-for="PhoneNo" > Phone Number</label>
+            <input asp-for="PhoneNo" class="form-control" />
+            <span asp-validation-for="PhoneNo" class="text text-bg-danger">@*Enter valid Phone No*@ </span>
+
+
+        </div>
+        <div class="row mb-3">
+            <label asp-for="RegistrationCharges" > RegistrationCharges</label>
+            <input asp-for="RegistrationCharges" class="form-control" />
+
+        </div>
+        <div class="row mb-3">
+            <label asp-for="ResidentialAddress" > ResidentialAddress</label>
+            <input asp-for="ResidentialAddress" class="form-control" />
+            <span asp-validation-for="ResidentialAddress" class="text text-bg-danger">@*Enter valid Address*@ </span>
+
+
+        </div>
+        <button class="btn btn-danger" type="submit" asp-controller="HospitalData"> 
+            Create
+            </button>
+       
+        <button class="btn btn-danger" type="submit" asp-action="DataTable"
+                asp-controller="HospitalData" style="margin-left:20px" onclick="return confirm('Are you sure You want to Back ')">
+            Back
+        </button>
+
+
+
+
+
+    </div>
+  @*  <div style="margin-top:20px">
+    
+    </div>*@
+
+
+  
+
+
+
+
+
+</form>
+@section scripts {
+             @{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+}
+
+
+

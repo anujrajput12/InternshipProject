@@ -1,0 +1,74 @@
+﻿@*
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>*@
+
+
+
+@model Hospital
+<form method="post" style="border-color:black">
+    <div class="border p-3 mt-4">
+        <div class="row p-3">
+            <h2> delete Data </h2>
+            <hr />
+        </div>
+        @*<div class="row m-3">
+        <label asp-for="Id"></label>
+        <input asp-for="Id" class="form-control"/>
+
+        </div>*@
+@*        <input type="hidden" asp-for="Id" />
+*@        <div class="row m-3">
+    <input type="hidden" asp-for="HospitalId"/>
+                <label asp-for="Email"></label>
+            <input disabled asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+        </div>
+        <div class="row m-3">
+            <label asp-for="PhoneNo"></label>
+            <input disabled asp-for="PhoneNo" class="form-control" />
+            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+
+
+        </div>
+        <div class="row m-3">
+            <label asp-for="RegistrationCharges"></label>
+            <input disabled asp-for="RegistrationCharges" class="form-control" />
+            <span asp-validation-for="RegistrationCharges" class="text-danger"></span>
+
+
+        </div>
+        <div class="row m-3">
+            <label asp-for="ResidentialAddress"></label>
+            <input disabled asp-for="ResidentialAddress" class="form-control" />
+            <span asp-validation-for="ResidentialAddress" class="text-danger"></span>
+
+
+        </div>
+        <button class="btn btn-primary m-5" type="submit" style="width:200px" onclick="return confirm('Are you sure You want to Delete this ')">
+            Delete
+        </button>
+        <button class="btn btn-primary m-5" type="submit" style=" width:200px " asp-action="DataTable" asp-controller="HospitalData"> Back </button>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</form>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
